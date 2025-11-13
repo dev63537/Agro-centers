@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRO CENTER - Agricultural Products & Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>🌾 AGRO CENTER</h1></a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav" id="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="pages/products.html" class="nav-link">Products</a>
+                    <a href="pages/services.html" class="nav-link">Services</a>
+                    <a href="pages/about.html" class="nav-link">About</a>
+                    <a href="pages/blog.html" class="nav-link">Blog</a>
+                    <a href="pages/contact.html" class="nav-link">Contact</a>
+                    <a href="pages/cart.html" class="nav-link cart-link">
+                        🛒 Cart <span id="cartCount" class="cart-count">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h2>Welcome to AGRO CENTER</h2>
+                    <p>Your trusted partner for premium agricultural products</p>
+                    <a href="pages/products.html" class="btn btn-primary btn-lg">Shop Now</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Quality Seeds & Fertilizers</h2>
+                    <p>Highest quality products for maximum yield</p>
+                    <a href="pages/products.html" class="btn btn-primary btn-lg">Browse Products</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Expert Agricultural Services</h2>
+                    <p>Professional guidance from experienced agronomists</p>
+                    <a href="pages/services.html" class="btn btn-primary btn-lg">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Browse our most popular and highly-rated products</p>
+            
+            <div class="grid grid-cols-3">
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Premium+Seeds" alt="Premium Seeds">
+                        <div class="product-badge">Featured</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(248 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Premium Seeds Pack</h3>
+                        <p class="card-text">High-quality hybrid seeds for maximum yield</p>
+                        <div class="product-footer">
+                            <span class="price">₹1,999</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(1, 'Premium Seeds', 1999)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Organic+Fertilizer" alt="Fertilizer">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Organic Fertilizer 50kg</h3>
+                        <p class="card-text">100% organic fertilizer for all crops</p>
+                        <div class="product-footer">
+                            <span class="price">₹2,499</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(2, 'Fertilizer', 2499)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Drip+Irrigation" alt="Irrigation">
+                        <div class="product-badge">Hot</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(412 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Complete Drip System</h3>
+                        <p class="card-text">Modern drip irrigation for water-efficient farming</p>
+                        <div class="product-footer">
+                            <span class="price">₹8,999</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(3, 'Drip System', 8999)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Pesticide" alt="Pesticide">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Organic Pesticide Spray</h3>
+                        <p class="card-text">Safe and effective organic pest control</p>
+                        <div class="product-footer">
+                            <span class="price">₹599</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(4, 'Pesticide', 599)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Farm+Tools" alt="Farm Tools">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(276 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Professional Tools Set</h3>
+                        <p class="card-text">12-piece tool set for all farming operations</p>
+                        <div class="product-footer">
+                            <span class="price">₹3,499</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(5, 'Tools', 3499)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x250?text=Soil+Tester" alt="Soil Tester">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(134 reviews)</span>
+                        </div>
+                        <h3 class="card-title">Digital Soil Tester</h3>
+                        <p class="card-text">Instant soil quality analysis for farming</p>
+                        <div class="product-footer">
+                            <span class="price">₹4,999</span>
+                            <button class="btn btn-sm btn-secondary" onclick="AgroCenter.addToCart(6, 'Soil Tester', 4999)">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="pages/products.html" class="btn btn-outline">View All Products →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive agricultural solutions tailored for you</p>
+            
+            <div class="grid grid-cols-4">
+                <div class="card service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable delivery to your doorstep</p>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">👨‍🌾</div>
+                    <h3>Expert Consulting</h3>
+                    <p>Get personalized advice from agricultural specialists</p>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Quality Assured</h3>
+                    <p>All products are certified and quality checked</p>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive pricing with bulk order discounts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose AGRO CENTER?</h2>
+            
+            <div class="grid grid-cols-3">
+                <div class="why-card">
+                    <h3>20+ Years Experience</h3>
+                    <p>Serving farmers with trusted products and services since 2004</p>
+                </div>
+                <div class="why-card">
+                    <h3>5000+ Happy Customers</h3>
+                    <p>Trusted by thousands of farmers across multiple states</p>
+                </div>
+                <div class="why-card">
+                    <h3>500+ Products</h3>
+                    <p>Wide range of seeds, fertilizers, tools, and equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Customer Testimonials</h2>
+            <p class="section-subtitle">What our customers have to say</p>
+            
+            <div class="grid grid-cols-3">
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"AGRO CENTER has been a game-changer for my farm. Their quality products and expert advice have significantly increased my yield."</p>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Farmer, Punjab</span>
+                    </div>
+                </div>
+
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Excellent service and reliable delivery. The organic fertilizers are premium quality and worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Singh</strong>
+                        <span>Organic Farmer, Haryana</span>
+                    </div>
+                </div>
+
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Their customer support team is fantastic. They helped me choose the right irrigation system and provided excellent guidance."</p>
+                    <div class="testimonial-author">
+                        <strong>Deepak Patel</strong>
+                        <span>Entrepreneur, Gujarat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts Section -->
+    <section class="latest-blog">
+        <div class="container">
+            <h2 class="section-title">Latest Articles & Tips</h2>
+            <p class="section-subtitle">Learn from our expert agricultural guides</p>
+            
+            <div class="grid grid-cols-3">
+                <div class="card blog-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Monsoon+Farming" alt="Monsoon">
+                    </div>
+                    <div class="card-body">
+                        <span class="badge badge-primary">Farming Tips</span>
+                        <h3 class="card-title">Monsoon Farming Guide</h3>
+                        <p class="card-text">Learn best practices for farming during monsoon season</p>
+                        <a href="pages/blog.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card blog-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Soil+Health" alt="Soil Health">
+                    </div>
+                    <div class="card-body">
+                        <span class="badge badge-success">Sustainability</span>
+                        <h3 class="card-title">Maintaining Soil Health</h3>
+                        <p class="card-text">Tips to keep your soil fertile and productive</p>
+                        <a href="pages/blog.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card blog-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Pest+Control" alt="Pest Control">
+                    </div>
+                    <div class="card-body">
+                        <span class="badge badge-warning">Pest Management</span>
+                        <h3 class="card-title">Organic Pest Control</h3>
+                        <p class="card-text">Effective organic pest management strategies</p>
+                        <a href="pages/blog.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="pages/blog.html" class="btn btn-outline">Read More Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive tips, product updates, and special offers delivered to your inbox</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                    <input type="email" placeholder="Enter your email" name="email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AGRO CENTER</h4>
+                    <p>Your trusted partner for agricultural excellence since 2004.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">T</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">in</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/products.html">Products</a></li>
+                        <li><a href="pages/services.html">Services</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 123 Agricultural Road, Farm City, 12345</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@agrocenter.com</p>
+                    <p>⏰ Mon-Fri: 9AM-6PM | Sat: 9AM-2PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGRO CENTER. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>
