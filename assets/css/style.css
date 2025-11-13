@@ -274,12 +274,14 @@ body {
 
 .btn-sm {
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    min-height: 40px;
 }
 
 .btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    min-height: 48px;
 }
 
 .btn:disabled {
@@ -360,7 +362,7 @@ body {
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--dark-text);
 }
@@ -368,6 +370,8 @@ body {
 .card-text {
     color: var(--light-text);
     margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* ============================================
@@ -376,7 +380,7 @@ body {
 
 .grid {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .grid-cols-1 {
@@ -384,15 +388,15 @@ body {
 }
 
 .grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .grid-cols-4 {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
 }
 
 /* ============================================
